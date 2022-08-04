@@ -5,6 +5,7 @@ import { publicProductList, nftVerifiedProductList } from './homePageData';
 import customStyle from './localStyle.module.css';
 import metamask from '../../assets/homeImg/metamask.png';
 import VerifiedProductCard from '../../components/verifiedProductCard/VerifiedProductCard';
+import { useMoralis } from "react-moralis";
 
 export default function HomePage() {
   const [nftVerified, setNftVerified] = useState(false);
@@ -14,13 +15,33 @@ export default function HomePage() {
     require('../../styles/bootstrap.min.css');
   }
 
-  useEffect(() => {
-    if (condition) {
+  const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
+
+    useEffect(() => {
+    if (isAuthenticated) {
+      setNftVerified(true)
     }
-    // if (true) {
-    //   setNftVerified(true)
-    // }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated]);
+
+  const login = async () => {
+    if (!isAuthenticated) {
+
+      await authenticate({signingMessage: "Log in using Moralis" })
+        .then(function (user) {
+          console.log("logged in user:", user);
+          console.log(user.get("ethAddress"));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
+
+  const logOut = async () => {
+    await logout();
+    console.log("logged out");
+  }
 
   return (
     <>
@@ -50,8 +71,9 @@ export default function HomePage() {
 
               <div className="collapse navbar-collapse d-flex align-items-center" id="navbarColor01">
                 <ul className="navbar-nav ms-auto">
-                  <li className="nav-item">
-                    <img src={metamask} alt="metamask" className={`${customStyle['meta-mask-img-verified']}`} />
+                  <li  className="nav-item">
+
+                    <img onClick={logOut} src={metamask} alt="metamask" className={`${customStyle['meta-mask-img-verified']}`} />
                   </li>
                   <Link to={'/dashboard'} className="link-decoration">
                     <li className="nav-item">
@@ -85,7 +107,8 @@ export default function HomePage() {
           <nav>
             <h2>Naked & Famous</h2>
             <div className={`${customStyle['nav-item-right']}`}>
-              <img src={metamask} alt="metamask" className={`${customStyle['meta-mask-img']}`} />
+              <img onClick={login} src={metamask} alt="metamask" className={`${customStyle['meta-mask-img']}`} />
+             
 
               <Link to={'/dashboard'} className={`link-decoration`}>
                 <h2>
