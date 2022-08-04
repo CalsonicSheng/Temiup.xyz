@@ -1,0 +1,17 @@
+.dashboard-page {
+  background-color: white;
+  padding: 30px;
+  width: 100%;
+}
+
+.ticket-container {
+  margin-top: 10px;
+  height: 85vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.ticket-container h3 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}

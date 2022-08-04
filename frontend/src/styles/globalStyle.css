@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.link-decoration {
+  text-decoration: none;
+}
+
+.flex-layout {
+  display: flex;
+}
+
+.link-decoration:hover {
+  text-shadow: 0 0 10px #fff;
+}
+
+.main-content-section {
+  min-height: 100vh;
+}
+
+.radius-custom {
+  border-radius: 15px !important;
+}

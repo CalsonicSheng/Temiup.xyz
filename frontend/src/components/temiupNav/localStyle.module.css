@@ -1,0 +1,41 @@
+.nav-bar {
+  height: 100vh;
+  background-color: rgb(43, 43, 63);
+  color: rgb(255, 255, 255) !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  padding: 40px 20px 10px 20px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+div span {
+  color: white;
+}
+
+.i-letter {
+  color: rgb(144, 199, 61);
+}
+
+.control-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.control-container i {
+  margin: 15px 0px;
+  color: white;
+}
+
+.control-container i:hover {
+  cursor: pointer;
+}

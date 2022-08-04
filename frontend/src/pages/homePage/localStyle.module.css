@@ -1,0 +1,66 @@
+.bootstrap-overrides .home-page-frame {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+.home-page-frame nav {
+  background-color: rgb(43, 43, 63);
+  /* height: 100px; */
+  width: 100%;
+  padding: 30px 250px;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+
+.nav-item-right {
+  display: flex;
+  width: 225px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-page-frame nav h2 {
+  color: white;
+}
+
+.home-page-frame nav .i-letter {
+  color: rgb(144, 199, 61);
+}
+
+.meta-mask-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.meta-mask-img:hover {
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+.product-section {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 250px;
+}
+.product-grid-wrapper {
+  display: grid;
+  row-gap: 70px;
+  column-gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.meta-mask-img-verified {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.meta-mask-img-verified:hover {
+  cursor: pointer;
+}
