@@ -27,7 +27,7 @@ export default function HomePage() {
   const login = async () => {
     if (!isAuthenticated) {
 
-      await authenticate({signingMessage: "Log in using Moralis" })
+      await authenticate({signingMessage: "Welcome to Temiup, your rewards await." })
         .then(function (user) {
           console.log("logged in user:", user);
           console.log(user.get("ethAddress"));
@@ -51,7 +51,7 @@ export default function HomePage() {
             <div className="container">
               {/* Ttile ----------------------------------------------------------------------------------------------------------------------- */}
 
-              <h2 className="m-0 fw-bold">Naked & Famous</h2>
+              <h2 className="m-0 fw-bold">Naked & Famous (Welcome CalsonSheng.eth)</h2>
 
               {/* collapse button (when width is shrinked) ------------------------------------------------------------------------------------- */}
 
